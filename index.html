@@ -1,30 +1,72 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
+    <style>
+        body {
+            transition: opacity ease-in 0.2s;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overscroll-behavior-y: contain;
+        }
+
+        body[unresolved] {
+            opacity: 0;
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .content-container {
+            text-align: left;
+            max-width: 600px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            /* 为图片定位提供基准 */
+        }
+
+        .content-container img {
+            width: 300px;
+            height: 300px;
+            display: block;
+            margin: 0 auto 20px;
+            /* 使图片居中并在下方留有一些间距 */
+        }
+
+        .content-container.bottom-reached {
+            transform: translateY(-10px);
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>关于/about</title>
-    <style>
-        body {
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            font-size: 18px;
-            color: #666;
-        }
-    </style>
 </head>
-<body>
-    <h1>关于</h1>
-    <p>计算机技术学习中。</p>
-    <p>研究领域：深度学习，IOT，互联网</p>
-	<br><br>
-    <h1>About</h1>
-    <p>Currently studying computer technology.</p>
-    <p>Research areas: Deep Learning, IoT, Internet</p>
+
+<body inmaintabuse="1">
+    <div class="content-container">
+        <img src="./web/ic.png" alt="Description of the image">
+        <span id="f0"
+            style="margin-left: 2.5%; font-size: 115%; background: url(&quot;zlPqV4n8.webp&quot;) center center / 100% 100% repeat text; -webkit-text-fill-color: transparent; user-select: text;">LaphiNeko</span>
+        <h1>关于</h1>
+        <p>&#x1F308 计算机技术学习中。</p>
+        <p>研究领域：深度学习，IOT，互联网</p>
+        <br><br>
+        <h1>About</h1>
+        <p>&#x1F308 Currently studying computer technology.</p>
+        <p>Research areas: Deep Learning, IoT, Internet</p>
+
+        <div id="volume-booster-visusalizer">
+            <!-- 其他内容保持不变 -->
+        </div>
+    </div>
 </body>
+
 </html>
